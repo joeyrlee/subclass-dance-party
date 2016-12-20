@@ -31,7 +31,7 @@ body, a:link, a:visited, a:active{
   position:absolute;
 }
 .blue-dancer{
-  border:10px solid blue;
+  border:10px solid #80cce5;
   border-radius:10px;
   position:absolute;
 }
