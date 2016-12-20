@@ -1,6 +1,7 @@
 var makeGreenDancer = function(top, left, timeBetweenSteps) {
   makeDancer.apply(this, arguments);
-  this.turnGreen();
+  this.$node.css('color', 'white');
+  this.$node.addClass('white-dancer');
 
   // this.$node.css('border', '15px solid green');
 
@@ -10,14 +11,5 @@ var makeGreenDancer = function(top, left, timeBetweenSteps) {
 };
 
 makeGreenDancer.prototype = Object.create(makeDancer.prototype);
-makeGreenDancer.prototype.constructor = makeBlinkyDancer;
-
-makeGreenDancer.prototype.step = function () {
-  makeDancer.prototype.step.call(this);
-  this.$(node).toggle();
-};
-makeGreenDancer.prototype.turnGreen = function () {
-  console.log(this);
-  this.$(node).css('border', '15px solid green');
-};
+makeGreenDancer.prototype.constructor = makeGreenDancer;
 
