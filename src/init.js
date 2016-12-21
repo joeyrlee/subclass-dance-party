@@ -47,46 +47,39 @@ $(document).ready(function() {
   });
 
   $('.interact').on('click', function (event) {
-    for (var i = 0; i < window.dancers.length; i = i + 2) {
-      var node1 = window.dancers[i];
-      var node2 = window.dancers[i + 1];
+    var node1 = window.dancers[Math.floor(Math.random() * window.dancers.length)];
+    var node2 = window.dancers[Math.floor(Math.random() * window.dancers.length)];
 
-      var leftAverage = (node1.left + node2.left) / 2;
-      var topAverage = (node1.top + node2.top) / 2;  
+    node1.$node.animate({
+      left: "+=50",
+      top: '+=50'}
+      , 5000);
+    // node2.$node.css()
 
-      // $node1.addClass('dancing-pairs');
-      // $node2.addClass('dancing-pairs');
+    // var node2 = window.dancers[Math.floor(Math.random() * window.dancers.length)];
 
-      // $node1.css('@keyframes example {' + 
-      //     '0%   {background-color:red; left:leftAverage px; top:topAverage px;}' + 
-      //     '100% {background-color:red; left:leftAverage px; top:topAverage px;} }'
-      // );
+    // $('node1').addClass('dancing-pairs');
+    // $('node2').addClass('dancing-pairs');
 
-      // node1.$node.animate( {top: '' + topaverage + 'px'}, 500);
-      // node1.$node.animate( {top: '' + leftaverage + 'px'} , 500);
+    // for (var i = 0; i < window.dancers.length; i = i + 2) {
+      // var node1 = window.dancers[i];
+      // var node2 = window.dancers[i + 1];
 
-    }
+      // var leftAverage = (node1.left + node2.left) / 2;
+      // var topAverage = (node1.top + node2.top) / 2;
+    // }
+    // setTimeout(function() {
+    //   $('node1').removeClass('dancing-pairs');
+    //   $('node2').removeClass('dancing-pairs');
+    // }, 7000);
   });
 
-  $('body').on('mouseenter', '.dancer', function(event) {
+  $('body').on('mouseenter', '.blue-dancer', function(event) {
     $(this).addClass('blue-dancer-bigger');
   });
-  $('body').on('mouseleave', '.dancer', function(event) {
+  $('body').on('mouseleave', '.blue-dancer', function(event) {
     $(this).removeClass('blue-dancer-bigger');
   });
-  // $('body').on('mouseenter', '.green-dancer', function(event) {
-  //   $this.fadeOut();
-  // });
-  // $('body').on('mouseleave', '.green-dancer', function(event) {
-  //   $this.fadeOut();
-  // });
-  // $('body').on('mouseenter', '.blue-dancer', function(event) {
-  //   $this.fadeOut();
-  // });
-  // $('body').on('mouseleave', '.blue-dancer', function(event) {
-  //   $this.fadeOut();
-  // });
-
 });
 
 

@@ -19,7 +19,7 @@ body, a:link, a:visited, a:active{
   float:right;
 }
 .left-link{
-  padding:5px 12px 5px 12px;
+  padding:4px 12px 5px 12px;
   float:left;
 }
 .topbar{
@@ -65,4 +65,7 @@ body, a:link, a:visited, a:active{
  */
 .dancing-pairs{
   animation: dancing 5s ease 2s 1 alternate;
+}
+@keyframes dancing {
+  100% {left:50%; top:50%}
 }
