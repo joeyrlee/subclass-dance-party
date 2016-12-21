@@ -2,6 +2,11 @@ body, html{
   height:100%;
 }
 body{
+  background: url('http://img1.10bestmedia.com/Images/Photos/233787/p-im-ballin_54_990x660_201406020130.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
   margin: 0px;
   background-color:#444;
   font-size: 18px;
@@ -13,6 +18,10 @@ body, a:link, a:visited, a:active{
   padding:5px 12px;
   float:right;
 }
+.left-link{
+  padding:5px 12px 5px 12px;
+  float:left;
+}
 .topbar{
   height:32px;
   background-color: #555;
@@ -21,17 +30,39 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
+  border:15px solid red;
+  border-radius:15px;
   position:absolute;
 }
 .green-dancer{
-  border:10px solid green;
-  border-radius:10px;
+  border:15px solid green;
+  border-radius:15px;
   position:absolute;
 }
 .blue-dancer{
-  border:10px solid #80cce5;
-  border-radius:10px;
+  border:15px solid #80cce5;
+  border-radius:15px;
   position:absolute;
+}
+.dancer-bigger{
+  border:75px solid red;
+  border-radius:15px;
+  position:absolute;
+}
+.green-dancer-bigger{
+  border:75px solid green;
+  border-radius:15px;
+  position:absolute;
+}
+.blue-dancer-bigger{
+  border:75px solid #80cce5;
+  border-radius:75px;
+  position:absolute;
+}
+
+/*
+ * On-click `interact`
+ */
+.dancing-pairs{
+  animation: dancing 5s ease 2s 1 alternate;
 }

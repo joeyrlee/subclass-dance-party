@@ -13,7 +13,7 @@ var makeBlueDancer = function(top, left, timeBetweenSteps) {
 makeBlueDancer.prototype = Object.create(makeDancer.prototype);
 makeBlueDancer.prototype.constructor = makeBlueDancer;
 
-makeBlueDancer.prototype.step = function () {
-  makeDancer.prototype.step.call(this);
-  this.$node.toggle();
-};
+// makeBlueDancer.prototype.step = function () {
+  // makeDancer.prototype.step.call(this);
+  // this.$node.toggle();
+// };
