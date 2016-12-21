@@ -23,7 +23,6 @@ $(document).ready(function() {
     // make a dancer with a random position
 
     var dancer = new dancerMakerFunction(
-      //Plans for 16:9 screen ratio and never generates dancers outside screen
       $('body').height() - 100 * (Math.random() * 8),
       $('body').width() - 100 * (Math.random() * 14),
       Math.random() * 1000
@@ -41,37 +40,59 @@ $(document).ready(function() {
 
   $('.moveBack').on('click', function (event) {
     for (var i = 0; i < window.dancers.length; i++) {
-      // var ran = Math.random() * 1000;
       window.dancers[i].$node.css('left', '' + window.dancers[i].left + 'px');
     }
   });
 
-  $('.interact').on('click', function (event) {
-    var node1 = window.dancers[Math.floor(Math.random() * window.dancers.length)];
-    var node2 = window.dancers[Math.floor(Math.random() * window.dancers.length)];
+  $('body').on('click', '.interact', function () {
+    var dancingNodes1 = [];
+    var dancingNodes2 = [];
+    for (var i = 0; i < window.dancers.length; i++) {
+      if (i % 2 === 1) {
+        dancingNodes1.push(window.dancers[i]);
+      } else {
+        dancingNodes2.push(window.dancers[i]);
+      }
+    }
 
-    node1.$node.animate({
-      left: "+=50",
-      top: '+=50'}
-      , 5000);
-    // node2.$node.css()
+    dancingNodes1.forEach(function(node) {
+      node.$node.animate({
+        left: '+=150',
+        top: '+=150'
+      }, 2000);
+      node.$node.animate({
+        left: '+=150',
+        top: '-=150'
+      }, 2000);
+      node.$node.animate({
+        left: '-=150',
+        top: '-=150'
+      }, 2000);
+      node.$node.animate({
+        left: '-=150',
+        top: '+=150'
+      }, 2000);
+    });
 
-    // var node2 = window.dancers[Math.floor(Math.random() * window.dancers.length)];
+    dancingNodes2.forEach(function(node) {
+      node.$node.animate({
+        left: '-=150',
+        top: '-=150'
+      }, 2000);
+      node.$node.animate({
+        left: '-=150',
+        top: '+=150'
+      }, 2000);
+      node.$node.animate({
+        left: '+=150',
+        top: '+=150'
+      }, 2000);
+      node.$node.animate({
+        left: '+=150',
+        top: '-=150'
+      }, 2000);
+    });
 
-    // $('node1').addClass('dancing-pairs');
-    // $('node2').addClass('dancing-pairs');
-
-    // for (var i = 0; i < window.dancers.length; i = i + 2) {
-      // var node1 = window.dancers[i];
-      // var node2 = window.dancers[i + 1];
-
-      // var leftAverage = (node1.left + node2.left) / 2;
-      // var topAverage = (node1.top + node2.top) / 2;
-    // }
-    // setTimeout(function() {
-    //   $('node1').removeClass('dancing-pairs');
-    //   $('node2').removeClass('dancing-pairs');
-    // }, 7000);
   });
 
   $('body').on('mouseenter', '.blue-dancer', function(event) {
